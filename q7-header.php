@@ -2,9 +2,7 @@
 <html>
 <head>
     <title>Your Website</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to Your Website</h1>
-        <!-- Other header content goes here -->
-    </header>
+  
