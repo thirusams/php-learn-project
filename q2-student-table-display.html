@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Table</title>
+    
+</head>
+<body>
+    <table id="data-table" style="border-spacing: 0;">
+        <thead>
+            <tr style = "border:1px; background-color:rgb(144, 133, 216); border: 1px solid;">
+                <th style = "border: 1px solid;">ID</th>
+                <th style = "border: 1px solid;">Name</th>
+                <th style = "border: 1px solid;">DateOfBirth</th>
+                <th style = "border: 1px solid;">Course</th>
+                <th style = "border: 1px solid;">Batch</th>
+            </tr>
+        </thead>
+        <tbody onload="populateTable">
+            <!-- Table rows will be added here using JavaScript -->
+            
+        </tbody>
+    </table>
+    
+    
+
+    <script>
+        // Your Map data
+const idToInfoMap = new Map();
+idToInfoMap.set(1, { name: "John Doe", dob:"1/05/23",course:"cse",batch:"2004" });
+idToInfoMap.set(2, { name: "John Doe", dob:"1/05/23",course:"cse",batch:"2004" });
+idToInfoMap.set(3, { name: "John Doe", dob:"1/05/23",course:"cse",batch:"2004" });
+idToInfoMap.set(4, { name: "John Doe", dob:"1/05/23",course:"cse",batch:"2004" });
+
+function colorFun(id) {
+    if (id % 2 == 0) return 'white';
+    else return 'blanchedalmond';
+    
+}
+// Function to populate the table
+function populateTable() {
+    console.log("populating");
+    const table = document.getElementById('data-table');
+    const tbody = table.getElementsByTagName('tbody')[0];
+    tbody.innerHTML = ''; // Clear the table body
+    console.log("populating");
+    // Loop through the Map and add rows and cells
+    idToInfoMap.forEach((info, id) => {
+        console.log(info,id);
+        const row = tbody.insertRow();
+        const idCell = row.insertCell(0);
+        const nameCell = row.insertCell(1);
+        const dobCell = row.insertCell(2);
+        const courseCell = row.insertCell(3);
+        const batcCell= row.insertCell(4);
+        row.style = "background:" + colorFun(id);
+        idCell.textContent = id;
+        idCell.style = "border: 1px solid;"
+    
+        nameCell.textContent = info.name;
+        nameCell.style = "border: 1px solid;"
+        dobCell.textContent = info.dob;
+        dobCell.style = "border: 1px solid;"
+        courseCell.textContent = info.course;
+        courseCell.style = "border: 1px solid;"
+        batcCell.textContent = info.batch;
+        batcCell.style = "border: 1px solid;"
+    });    
+}
+window.onload = function () {
+    populateTable();
+        };
+    </script>
+</body>
+</html>
