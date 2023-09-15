@@ -1,12 +1,11 @@
 <?php include('q7-header.php'); ?>
-
+<form action="process.php" method="POST">
 <main class="centered-div">
     <h2 style = "width:70%; text-align:left; margin-left: 15%;"> Please spare a few minutes for given valuable feedback</h2>
     <div >
         <div>
             <label class = "size-50">Your Name</label>
             <input class = "size-50" type="text" id="name" name="name" required minlength="4" maxlength="8" size="10" />
-            
         </div>
         <div>
         <label class = "size-50">Gender</label>
@@ -28,7 +27,7 @@
 </fieldset>
 <div>
 <label class = "size-50" for="email">Email:</label>
-<input class = "size-50" type="email" id="email" pattern=".+@globex\.com" size="30" required />
+<input class = "size-50" type="email" id="email" size="30" required />
 </div>
 </div>
 
@@ -36,10 +35,15 @@
 <textarea class = "size-50" id="comments" name="comments" rows="5" cols="33">
 sample comments...
 </textarea>
+<label for="username">Username:</label>
+    <input type="text" id="username" name="username" required><br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br>
+    <input type="submit" value="Submit">
 </div>
     <?php include('q7-footer.php'); ?>
 </main>
-
+</form>
 <script>
     
 </script>
